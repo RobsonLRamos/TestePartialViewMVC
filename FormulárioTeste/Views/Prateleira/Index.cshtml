@@ -1,0 +1,22 @@
+﻿@addTagHelper *, FormulárioTeste
+@model  FormulárioTeste.Models.ViewModels.PreteleiraViewModel
+@{
+    ViewData["Title"] = "PrateleiraView";
+}
+
+<h1>PrateleiraView</h1>
+<div>
+    @using(Html.BeginForm("GravaDados", "Prateleira", FormMethod.Post))
+    {
+        <div>
+            <label>PrateleiraId</label>
+            <input type="text" asp-for="@(Model.id)" />
+        </div>
+        <vc:livro Livro="@Model.livro" />
+        <vc:brinquedo brinquedo="@Model.brinquedo"/>        
+
+        <input type="submit" name="Salvar" />
+    }
+</div>
+
+
